@@ -1,6 +1,10 @@
 TARGET_BOOTLOADER_BOARD_NAME := msm8992
 TARGET_BOARD_INFO_FILE := $(DEVICE_PATH)/board-info.txt
+ifneq ($(WITH_ADB),true)
 TARGET_SYSTEM_PROP += $(DEVICE_PATH)/system.prop
+else
+TARGET_SYSTEM_PROP := $(LOCAL_PATH)/system.adb.prop
+endif
 
 TARGET_NO_BOOTLOADER := true
 TARGET_NO_RADIOIMAGE := true
