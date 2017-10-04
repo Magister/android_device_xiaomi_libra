@@ -1,2 +1,5 @@
 TARGET_BOOTANIMATION_PRELOAD := true
 TARGET_BOOTANIMATION_TEXTURE_CACHE := true
+
+# Compile libhwui in performance mode
+HWUI_COMPILE_FOR_PERF := true
