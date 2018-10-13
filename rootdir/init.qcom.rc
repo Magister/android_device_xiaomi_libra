@@ -205,6 +205,8 @@ on boot
     # Touchscreen
     chown root system /proc/touchscreen/double_tap_enable
     chmod 0660 /proc/touchscreen/double_tap_enable
+    chown root system /proc/touchscreen/edge_touch_mode
+    chmod 0660 /proc/touchscreen/edge_touch_mode
 
     # Key disabler
     chown root system /proc/touchscreen/nav_button_enable
