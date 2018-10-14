@@ -132,6 +132,18 @@ static void set_feature(struct power_module *module __unused,
         sysfs_write(TAP_TO_WAKE_NODE, tmp_str);
     }
 #endif
+#ifdef EDGE_TAP_NODE
+    if (feature == POWER_FEATURE_EDGE_TAP) {
+        int mode;
+        if (state == 1) {
+            mode = 2;
+        } else {
+            mode = 0;
+        }
+        snprintf(tmp_str, 64, "%d", mode);
+        sysfs_write(EDGE_TAP_NODE, tmp_str);
+    }
+#endif
 }
 
 static int get_feature(struct power_module *module __unused, feature_t feature)
